@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/colors.css"> <!-- Color palette -->
+    <link rel="stylesheet" href="css/style.css"> <!-- General styles -->
     <link rel="stylesheet" href="css/header.css"> <!-- Header-specific styles -->
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">
-            <a href="#home">
-                <span class="logo-dreams">Dreams</span><span class="logo-up">UP</span>
-            </a>
-        </div>
-        <nav>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#home">
+                    <span class="logo-dreams">Dreams</span><span class="logo-up">UP</span>
+                </a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="contact-btn">Contact Me</button>
+            </nav>
+        </div>
     </header>
 
     <!-- JavaScript for Mobile Menu -->

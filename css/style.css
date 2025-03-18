@@ -18,6 +18,20 @@ body {
     padding: 1rem; /* Padding around the grid */
 }
 
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--neutral-12); /* Dark Neutral */
+    color: var(--neutral-1); /* White text */
+}
+
 /* Sections */
 .about-section,
 .projects-section,

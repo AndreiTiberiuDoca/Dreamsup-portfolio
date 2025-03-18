@@ -1,0 +1,29 @@
+/* Color Palette */
+:root {
+    /* Neutral Variations */
+    --neutral-1: #FFFFFF; /* White */
+    --neutral-2: #FAFAFA; /* Very Light Gray */
+    --neutral-3: #F5F5F5; /* Light Gray */
+    --neutral-4: #F0F0F0; /* Slightly Darker Light Gray */
+    --neutral-5: #D9D9D9; /* Medium Gray */
+    --neutral-6: #BFBFBF; /* Gray */
+    --neutral-7: #8C8C8C; /* Dark Gray */
+    --neutral-8: #595959; /* Darker Gray */
+    --neutral-9: #434343; /* Almost Black */
+    --neutral-10: #262626; /* Dark Neutral */
+    --neutral-11: #1F1F1F; /* Very Dark Neutral */
+    --neutral-12: #141414; /* Near Black */
+    --neutral-13: #000000; /* Black */
+
+    /* Geekblue Variations */
+    --geekblue-1: #F0F5FF; /* Lightest Geekblue */
+    --geekblue-2: #D6E4FF; /* Very Light Geekblue */
+    --geekblue-3: #ADC6FF; /* Light Geekblue */
+    --geekblue-4: #85A5FF; /* Slightly Darker Light Geekblue */
+    --geekblue-5: #597EF7; /* Medium Geekblue */
+    --geekblue-6: #2F54EB; /* Vibrant Geekblue */
+    --geekblue-7: #1D39C4; /* Dark Geekblue */
+    --geekblue-8: #10239E; /* Darker Geekblue */
+    --geekblue-9: #061178; /* Very Dark Geekblue */
+    --geekblue-10: #030852; /* Darkest Geekblue */
+}
