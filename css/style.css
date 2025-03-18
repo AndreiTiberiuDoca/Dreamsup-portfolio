@@ -8,79 +8,41 @@ body {
     background-color: #121212; /* Dark background */
 }
 
-header {
-    background: #1f1f1f; /* Slightly lighter dark gray */
-    background: linear-gradient(to right, #6200ea, #3700b3);
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12-column grid */
+    gap: 1rem; /* Spacing between grid items */
+    margin: 0 auto; /* Center the container */
+    max-width: 1200px; /* Maximum width for the grid */
+    padding: 1rem; /* Padding around the grid */
+}
+
+/* Sections */
+.about-section,
+.projects-section,
+.contact-section {
+    grid-column: span 12; /* Full width on smaller screens */
+    padding: 2rem;
+    background: #1f1f1f;
     color: #ffffff;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-header h1 {
-    margin: 0;
-    font-weight: 700; /* Bold heading */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #6200ea; /* Vibrant purple links */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-}
-
-.project {
-    margin-bottom: 20px;
-    background: #1f1f1f; /* Slightly lighter dark gray */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 15px;
     border-radius: 8px;
 }
 
-.project img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
+@media (min-width: 768px) {
+    .about-section,
+    .projects-section,
+    .contact-section {
+        grid-column: span 8; /* Centered layout on larger screens */
+        margin: 0 auto;
+    }
 }
 
-.project a {
-    color: #6200ea; /* Vibrant purple links */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.project a:hover {
-    text-decoration: underline;
-}
-
+/* Footer Section */
 footer {
+    grid-column: span 12; /* Full width */
     text-align: center;
     padding: 1rem 0;
-    background: #1f1f1f; /* Slightly lighter dark gray */
+    background: #1f1f1f;
     color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-a:hover {
-    color: #bb86fc; /* Light purple */
 }

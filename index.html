@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Portfolio</title>
-        <link rel="stylesheet" href="css/style.css"> <!-- Main styles -->
-        <link rel="stylesheet" href="css/header.css"> <!-- Header-specific styles -->
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
-        <script src="js/header.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/header.css"> <!-- Header-specific styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
 <body>
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <div class="logo">
+            <a href="#home">
+                <span class="logo-dreams">Dreams</span><span class="logo-up">UP</span>
+            </a>
+        </div>
         <nav>
-            <ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -22,44 +29,7 @@
         </nav>
     </header>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Andrei Doca, UI/UX Designer. Passionate about creating amazing digital experiences. Here's a bit more about me:</p>
-        <p>[Add more details about your skills, education, or experience here.]</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <img src="assets/images/my-image.png" alt="My Image">
-            <p>Description of Project 1. Add details about the technologies used and include a link to the live demo or GitHub repository.</p>
-            <a href="https://example.com/project1" target="_blank">View Live Demo</a>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <img src="assets/images/project2.jpg" alt="Project 2">
-            <p>Description of Project 2.</p>
-            <a href="https://example.com/project2" target="_blank">View Live Demo</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me via email or social media:</p>
-        <ul>
-            <li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
-            <li>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn Profile</a></li>
-            <li>GitHub: <a href="https://github.com/andreitiberiudoca" target="_blank">GitHub Profile</a></li>
-        </ul>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
-    </footer>
+    <!-- JavaScript for Mobile Menu -->
+    <script src="js/header.js"></script>
 </body>
 </html>

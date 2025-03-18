@@ -1,46 +1,115 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+}
+
 /* Header Styles */
 header {
-    background: #1f1f1f; /* Slightly lighter dark gray */
-    color: #ffffff;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between; /* Align logo and nav horizontally */
-    align-items: center;
-    position: sticky; /* Keeps the header at the top while scrolling */
+    background: #ffffff; /* White background */
+    color: #121212; /* Dark text */
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: 10rem 1fr auto; /* 10rem margin, logo, nav */
+    column-gap: 2rem; /* Gutter (spacing between grid items) */
+    align-items: center; /* Vertically center items */
+    padding: 1rem; /* Minimal padding */
+    position: sticky;
     top: 0;
-    z-index: 1000; /* Ensures the header stays above other content */
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    margin: 0 0 0 20px; /* Add spacing to the left */
+/* Logo Container */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-dreams {
+    font-weight: 500; /* Work Sans Medium */
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #6200ea; /* Vibrant purple for the title */
+    color: #4A148C; /* Dark violet for "Dreams" */
 }
 
+.logo-up {
+    font-weight: 700; /* Work Sans Bold */
+    font-size: 1.5rem;
+    color: #6200ea; /* Vibrant purple for "UP" */
+}
+
+/* Navigation Links */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Arrange links horizontally */
-    gap: 20px; /* Space between links */
-    margin-right: 20px; /* Add spacing to the right */
+    display: flex;
+    gap: 2rem; /* Space between links (32px) */
 }
 
 nav ul li a {
-    color: #ffffff; /* White text for links */
-    text-decoration: none;
+    font-family: 'Work Sans', sans-serif; /* Ensure Work Sans is applied */
     font-weight: bold;
     font-size: 1rem;
+    color: #4A148C; /* Dark violet for links */
+    text-decoration: none;
     transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 nav ul li a:hover {
-    color: #bb86fc; /* Light purple on hover */
+    color: #6200ea; /* Vibrant purple on hover */
 }
 
-/* Active Link Styling */
-nav ul li a.active {
-    color: #6200ea; /* Highlight the active section */
-    border-bottom: 2px solid #6200ea; /* Add an underline */
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background: #121212;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    header {
+        grid-template-columns: 2rem 1fr; /* Reduce margin on smaller screens */
+        column-gap: 1rem; /* Smaller gutter */
+    }
+
+    .menu-toggle {
+        display: flex;
+        justify-self: end; /* Align hamburger menu to the right */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #ffffff;
+        padding: 1rem;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
 }
