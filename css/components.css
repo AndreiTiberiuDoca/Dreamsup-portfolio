@@ -1,0 +1,51 @@
+/* Buttons */
+.primary-btn {
+    background-color: var(--geekblue-6); /* Vibrant Geekblue */
+    color: var(--neutral-1); /* White text */
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.primary-btn:hover {
+    background-color: var(--geekblue-8); /* Darker Geekblue on hover */
+}
+
+.secondary-btn {
+    background-color: transparent; /* Transparent background */
+    color: var(--geekblue-6); /* Geekblue text */
+    border: 2px solid var(--geekblue-6); /* Outline border */
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background-color: var(--geekblue-6); /* Background changes on hover */
+    color: var(--neutral-1); /* Text color changes to white */
+}
+
+/* Inputs */
+.input-field {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    border: 1px solid var(--neutral-5);
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: var(--geekblue-6); /* Highlight border on focus */
+    outline: none;
+}

@@ -1,35 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="css/colors.css"> <!-- Color palette -->
-    <link rel="stylesheet" href="css/style.css"> <!-- General styles -->
-    <link rel="stylesheet" href="css/header.css"> <!-- Header-specific styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <head>
+            <link rel="stylesheet" href="css/colors.css">
+            <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/header.css">
+            <link rel="stylesheet" href="css/main-section.css">
+            <link rel="stylesheet" href="css/projects.css">
+            <link rel="stylesheet" href="css/core-values.css">
+            <link rel="stylesheet" href="css/components.css"> <!-- Add this line -->
+        </head>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <a href="#home">
-                    <span class="logo-dreams">Dreams</span><span class="logo-up">UP</span>
+
+<!-- Navigation Bar -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="#home">
+                <span class="logo-name">Andrei Doca</span>
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#main-cta" class="active">About Me</a></li>
+                <li><a href="#core-values">Values</a></li> <!-- Link către secțiunea Core Values -->
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+            <button class="contact-btn">Contact Me</button>
+            <button id="mobile-menu" class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- Main CTA Section -->
+<section id="main-cta">
+    <div class="container">
+        <!-- Text Block -->
+        <div class="text-block">
+            <div class="tag">UI/UX & Product Designer</div>
+            <h1>Hello, I’m Andrei Doca</h1>
+            <p>
+                Experienced UI/UX and Product Designer with a strong background in delivering end-to-end digital solutions across B2B, engineering, logistics,
+                food industry, and healthcare. I’m driven by creating user-centric designs that not only meet client expectations but also enhance business performance.
+                Always open to new challenges that allow me to leverage my skills in impactful projects.
+            </p>
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn">
+                    <img src="assets/icons/Linkedin-icon.svg" alt="LinkedIn Icon">
+                </a>
+                <a href="https://www.behance.net/your-profile" target="_blank" aria-label="Behance">
+                    <img src="assets/icons/Behance-icon.svg" alt="Behance Icon">
                 </a>
             </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="contact-btn">Contact Me</button>
-            </nav>
         </div>
-    </header>
+        <!-- Image -->
+        <div class="image">
+            <img src="assets/images/432988175_8165141093500991_3916870372183870595_n.jpg" alt="Main Image">
+        </div>
+    </div>
+</section>
 
-    <!-- JavaScript for Mobile Menu -->
-    <script src="js/header.js"></script>
+<!-- Core Values Section -->
+<section id="core-values">
+    <div class="container">
+         <!-- Core Values Header -->
+         <div class="core-values-header">
+            <img src="assets/icons/Core Values.svg" alt="Value Icon 1">
+        </div>
+
+        <!-- Value Cards -->
+        <div class="value-card">
+            <div class="icon-container">
+                <img src="assets/icons/Value 1.svg" alt="Value Icon 1">
+            </div>
+            <div class="text-container">
+                <h3>Build and stay loyal</h3>
+                <p>
+                    Thoughtful, objective user research has the power to uncover unmet needs and ideas that can inspire long-term thinking. That's why my design decisions and processes always stem from user insights and observed truth.
+                </p>
+            </div>
+        </div>
+        <div class="value-card reverse">
+            <div class="icon-container">
+                <img src="assets/icons/Value 2.svg" alt="Value Icon 2">
+            </div>
+            <div class="text-container">
+                <h3>Innovate with purpose</h3>
+                <p>
+                    Innovation isn't just about creativity; it's about solving real problems. My approach focuses on delivering value to users while staying true to business goals.
+                </p>
+            </div>
+        </div>
+        <div class="value-card">
+            <div class="icon-container">
+                <img src="assets/icons/Value 3.svg" alt="Value Icon 3">
+            </div>
+            <div class="text-container">
+                <h3>Collaborate effectively</h3>
+                <p>
+                    Collaboration is key to success. I believe in working closely with cross-functional teams to deliver impactful solutions that meet user needs.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+    
+</section>
+<!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card" data-modal="modal-1">
+                <div class="card-content">
+                    <div class="card-left">
+                        <img src="assets/images/Default logo no text  2.png" alt="Project Logo" class="card-logo">
+                    </div>
+                    <div class="card-right">
+                        <h3>Project 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
+                        <button class="secondary-btn">See Project</button> <!-- Button included here -->
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for other cards... -->
+        </div>
+    </div>
+</section>
+
+<!-- Modal Templates -->
+<div id="modal-1" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Project 1 Details</h2>
+        <p>This is where you can provide detailed information about the project.</p>
+        <img src="assets/images/BG.png" alt="Project 1 Full Image" style="width: 100%; margin-top: 1rem;">
+        <p>More content here...</p>
+    </div>
+</div>
+<!-- Repeat for other modals... -->
+ 
+<!-- JavaScript Files -->
+<script src="js/header.js"></script>
+<script src="js/projects.js"></script>
+
 </body>
 </html>

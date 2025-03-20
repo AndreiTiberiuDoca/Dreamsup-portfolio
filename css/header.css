@@ -8,14 +8,19 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%; /* Ensure the header spans the entire width */
+    transition: box-shadow 0.3s ease; /* Smooth transition for the shadow effect */
+    box-shadow: none; /* No shadow by default */
+}
+
+header.scrolled {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow when scrolled */
 }
 
 /* Centered Container */
 .header-container {
-    display: grid; /* Use CSS Grid for layout */
-    grid-template-columns: auto 1fr; /* Logo on the left, nav and button on the right */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between logo and nav/button */
     width: 100%;
     max-width: 1200px; /* Maximum width for the container */
     margin: 0 auto; /* Center the container */
@@ -33,24 +38,17 @@ header {
     color: inherit;
 }
 
-.logo-dreams {
-    font-weight: 500; /* Work Sans Medium */
-    font-size: 1.5rem;
-    color: var(--geekblue-7); /* Dark Geekblue */
-}
-
-.logo-up {
+.logo-name {
     font-weight: 700; /* Work Sans Bold */
     font-size: 1.5rem;
     color: var(--geekblue-6); /* Vibrant Geekblue */
 }
 
-/* Navigation Links and Contact Me Button */
+/* Navigation Links */
 nav {
     display: flex;
     justify-content: flex-end; /* Align nav to the end of its grid cell */
-    gap: 64px; /* 64px padding between links */
-    align-items: center; /* Vertically center nav items */
+    gap: 64px; /* 64px padding between links and button */
 }
 
 nav ul {
@@ -66,17 +64,21 @@ nav ul li a {
     font-family: 'Work Sans', sans-serif; /* Ensure Work Sans is applied */
     font-weight: bold;
     font-size: 1rem;
-    color: var(--geekblue-7); /* Dark Geekblue for links */
+    color: var(--neutral-7); /* Neutral-7 for inactive links */
     text-decoration: none;
     transition: color 0.3s ease; /* Smooth hover effect */
     border-bottom: 2px solid transparent; /* Default state */
     padding-bottom: 0.25rem; /* Padding for underline */
 }
 
-nav ul li a:hover,
+nav ul li a:hover {
+    color: var(--geekblue-6); /* Vibrant Geekblue on hover */
+    text-decoration: none; /* No underline on hover */
+}
+
 nav ul li a.active {
-    color: var(--geekblue-6); /* Vibrant Geekblue on hover/active */
-    border-bottom: 2px solid var(--geekblue-6); /* Underline on hover/active */
+    color: var(--geekblue-6); /* Vibrant Geekblue for active links */
+    border-bottom: 2px solid var(--geekblue-6); /* Underline for active links */
 }
 
 /* Contact Me Button */
@@ -95,7 +97,7 @@ nav ul li a.active {
 }
 
 .contact-btn:hover {
-    background-color: var(--geekblue-7); /* Dark Geekblue on hover */
+    background-color: var(--geekblue-8); /* Darker Geekblue on hover */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
 }
 
@@ -120,7 +122,7 @@ nav ul li a.active {
     }
 
     .header-container {
-        grid-template-columns: 1fr; /* Stack logo and nav vertically */
+        flex-direction: column; /* Stack logo and nav vertically */
     }
 
     .menu-toggle {
