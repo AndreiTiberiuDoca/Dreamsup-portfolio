@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     gap: 4rem; /* 64px / 16 = 4rem */
+    padding: 0 2rem; /* Add horizontal padding of 32px (2rem) */
 }
 
 .core-values-header {
@@ -19,17 +20,17 @@
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for perfect centering */
-    width: 100%;
-    height: 10rem; /* 148px / 16 = 9.25rem */
+    width: 50%;
+    height: 10rem; /* Initial height for desktop */
     z-index: 1; /* Place above the blue background but below the content */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.core-values-header svg {
+.core-values-header img {
     width: 100%;
-    height: 100%;
+    height: auto;
     pointer-events: none; /* Ensure the SVG doesn't interfere with interactions */
 }
 
@@ -52,6 +53,7 @@
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     text-align: center;
+    margin-bottom: 1rem; /* Reduce spacing between icon and text to 16px */
 }
 
 .text-container {
@@ -68,5 +70,58 @@
 .value-card p {
     font-size: 1.25rem; /* 20px / 16 = 1.25rem */
     line-height: 1.6;
-    margin-bottom: 0; /* Remove bottom margin */
+    margin-bottom: 0;
+}
+
+/* Responsive Scaling for Core Values SVG */
+@media (max-width: 1300px) {
+    .core-values-header img {
+        width: 100%; /* Reduce size proportionally */
+    }
+}
+
+/* Responsive Design for Tablet */
+@media (max-width: 992px) {
+    #core-values .container {
+        padding: 0 4rem; /* 64px padding on tablets */
+    }
+
+    .value-card {
+        flex-direction: column; /* Stack icon, header, and paragraph vertically */
+        align-items: flex-start; /* Align content to the left */
+        padding: 0 4rem; /* 64px padding on tablets */
+    }
+
+    .value-card.reverse {
+        flex-direction: column; /* Remove reverse layout on tablets */
+    }
+
+    .icon-container {
+        margin-bottom: 1rem; /* Reduce spacing between icon and text to 16px */
+    }
+    
+    .core-values-header {
+        display: none; /* Hide the entire header on mobile */
+    }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    #core-values .container {
+        padding: 0 1.5rem; /* 24px padding on mobile */
+    }
+
+    .value-card {
+        flex-direction: column; /* Stack icon, header, and paragraph vertically */
+        align-items: flex-start; /* Align content to the left */
+        padding: 0 1.5rem; /* 24px padding on mobile */
+    }
+
+    .value-card.reverse {
+        flex-direction: column; /* Remove reverse layout on mobile */
+    }
+
+    .icon-container {
+        margin-bottom: 1rem; /* Reduce spacing between icon and text to 16px */
+    }
 }

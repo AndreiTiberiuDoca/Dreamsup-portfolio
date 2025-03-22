@@ -16,13 +16,14 @@
     gap: 2.5rem; /* 40px / 16 = 2.5rem */
     align-items: center; /* Vertically align items */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding: 0 1.5rem; /* Add horizontal padding of 24px / 16 = 1.5rem */
 }
 
 /* Text Block Styling */
 .text-block {
     flex: 1; /* Take up available space */
     text-align: left; /* Align text to the left */
-    padding: 0; /* Remove padding */
+    padding-left: 1.5rem; /* Add left padding of 24px / 16 = 1.5rem */
 }
 
 /* Tag Styling */
@@ -53,15 +54,15 @@
     line-height: 1.6; /* Improve readability with line height */
     margin: 0; /* Remove all default margins */
     margin-block-end: 0; /* Explicitly remove bottom margin */
-    padding-bottom: 1rem; /* Add bottom padding of 32px / 16 = 2rem */
+    padding-bottom: 1rem; /* Remove bottom padding */
 }
 
 /* Social Links Styling */
 .social-links {
     display: flex; /* Arrange icons in a row */
-    gap: 1rem; /* 16px / 16px = 1rem */
+    gap: 1rem; /* Space between icons */
     align-items: center; /* Vertically align icons */
-    padding: 0; /* Remove padding */
+    justify-content: flex-start; /* Align icons to the left by default */
 }
 
 .social-links a {
@@ -69,24 +70,78 @@
 }
 
 .social-links img {
-    width: 1.5rem; /* 24px / 16 = 2rem */
-    height: 1.5rem; /* Maintain aspect ratio */
-    transition: transform 0.3s ease; /* Smooth hover effect */
+    width: 24px; /* Set a consistent size for the icons */
+    height: 24px; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth scaling effect on hover */
 }
 
+/* Hover Effects */
 .social-links img:hover {
     transform: scale(1.4); /* Slightly enlarge icons on hover */
+}
+
+/* Default Colors */
+.linkedin-icon img {
+    filter: grayscale(0%) brightness(1); /* Default LinkedIn color */
+}
+
+.behance-icon img {
+    filter: grayscale(0%) brightness(1); /* Default Behance color */
+}
+
+/* Hover Effects */
+.linkedin-icon:hover img {
+    filter: invert(38%) sepia(75%) saturate(3153%) hue-rotate(200deg) brightness(97%) contrast(93%);
+    /* This filter combination produces #2867B2 */
+}
+
+.behance-icon:hover img {
+    filter: invert(0%) sepia(0%) saturate(7489%) hue-rotate(200deg) brightness(100%) contrast(100%);
+    /* This filter combination produces #000000 */
 }
 
 /* Image Styling */
 .image {
     flex: 1; /* Take up available space */
-    text-align: right; /* Center align the image */
-    padding: 0; /* Remove padding */
+    text-align: right; /* Align image to the right */
+    padding-right: 1.5rem; /* Add right padding of 24px / 16 = 1.5rem */
 }
 
 .image img {
     max-width: 25rem; /* 400px / 16 = 25rem */
     height: auto; /* Maintain aspect ratio */
     border-radius: 0.5rem; /* 8px / 16 = 0.5rem */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    #main-cta .container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 0 1rem; /* Reduce padding on smaller screens */
+    }
+
+    .text-block {
+        padding-left: 0; /* Remove left padding on mobile */
+        text-align: left; /* Align text to the left */
+        order: 1; /* Place text block first */
+        padding: 0 1rem; /* Add horizontal padding for responsive design */
+    }
+
+    #main-cta p {
+        text-align: left; /* Align paragraph text to the left */  
+    }
+
+    .image {
+        padding-right: 0; /* Remove right padding on mobile */
+        text-align: center; /* Center align image */
+        order: 2; /* Place image block second */
+        margin-top: 1.5rem; /* Add spacing between text and image */
+    }
+
+    .image img {
+        max-width: 100%; /* Make the image responsive */
+        width: 100%; /* Ensure the image takes full width */
+        height: auto; /* Maintain aspect ratio */
+    }
 }

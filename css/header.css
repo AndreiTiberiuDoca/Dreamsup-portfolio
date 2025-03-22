@@ -1,3 +1,10 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Header Styles */
 header {
     background: var(--neutral-1); /* White background */
@@ -25,6 +32,7 @@ header.scrolled {
     max-width: 1200px; /* Maximum width for the container */
     margin: 0 auto; /* Center the container */
     align-items: center; /* Vertically center items */
+    padding-right: 0; /* Remove extra padding */
 }
 
 /* Logo Container */
@@ -45,18 +53,24 @@ header.scrolled {
 }
 
 /* Navigation Links */
-nav {
-    display: flex;
-    justify-content: flex-end; /* Align nav to the end of its grid cell */
-    gap: 64px; /* 64px padding between links and button */
+nav ul li a {
+    font-family: 'Work Sans', sans-serif; /* Ensure Work Sans is applied */
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--neutral-7); /* Neutral-7 for inactive links */
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth hover effect */
+    border-bottom: 2px solid transparent; /* Default state */
+    padding-bottom: 0.25rem; /* Padding for underline */
 }
+
 
 nav ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0; /* Remove padding from the list */
     display: flex;
-    gap: 64px; /* 64px padding between links */
+    gap: 64px; /* Maintain spacing between links */
     align-items: center; /* Vertically center nav items */
 }
 
@@ -66,15 +80,15 @@ nav ul li a {
     font-size: 1rem;
     color: var(--neutral-7); /* Neutral-7 for inactive links */
     text-decoration: none;
-    transition: color 0.3s ease; /* Smooth hover effect */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth hover effect */
     border-bottom: 2px solid transparent; /* Default state */
     padding-bottom: 0.25rem; /* Padding for underline */
 }
 
 nav ul li a:hover {
     color: var(--geekblue-6); /* Vibrant Geekblue on hover */
-    text-decoration: none; /* No underline on hover */
 }
+
 
 nav ul li a.active {
     color: var(--geekblue-6); /* Vibrant Geekblue for active links */
@@ -94,6 +108,7 @@ nav ul li a.active {
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
     align-self: center; /* Vertically center the button */
     border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
 }
 
 .contact-btn:hover {
@@ -103,45 +118,62 @@ nav ul li a.active {
 
 /* Mobile Menu */
 .menu-toggle {
-    display: none;
+    display: none; /* Hide menu toggle by default */
     flex-direction: column;
     cursor: pointer;
+    border: none; /* Remove any border */
+    background: none; /* Remove background */
+    padding: 0; /* Remove padding */
 }
 
-.menu-toggle .bar {
-    width: 25px;
-    height: 3px;
-    background: var(--neutral-10); /* Dark Neutral */
-    margin: 4px 0;
-    transition: 0.4s;
+.menu-toggle img {
+    width: 25px; /* Set a consistent size for the SVG */
+    height: auto; /* Maintain aspect ratio */
 }
 
-@media (max-width: 768px) {
+.nav-links {
+    display: flex; /* Default state for desktop */
+    flex-direction: row; /* Horizontal alignment */
+    gap: 64px; /* Spacing between links */
+}
+
+.nav-links.active {
+    display: flex; /* Show menu when toggled */
+    flex-direction: column; /* Stack links vertically */
+    gap: 1rem; /* Spacing between links */
+    align-items: flex-start; /* Align links to the left */
+    background: var(--neutral-1); /* Background for mobile menu */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    right: 0;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+/* Responsive Design for Navigation */
+@media (max-width: 992px) {
     header {
-        padding: 1rem; /* Adjust padding for smaller screens */
+        padding: 1rem 2rem; /* Reduce horizontal padding on smaller screens */
     }
 
     .header-container {
-        flex-direction: column; /* Stack logo and nav vertically */
+        padding-right: 0; /* Remove extra padding */
+    }
+
+    nav ul {
+        display: none; /* Hide navigation links on smaller screens */
     }
 
     .menu-toggle {
-        display: flex;
-        justify-self: end; /* Align hamburger menu to the right */
+        display: block; /* Show menu toggle on smaller screens */
     }
 
     .nav-links {
-        display: none;
-        flex-direction: column;
-        background: var(--neutral-1); /* White background */
-        padding: 1rem;
+        display: none; /* Hide navigation links by default */
     }
 
-    .nav-links li {
-        margin: 1rem 0;
-    }
-
-    .nav-links.active {
-        display: flex;
+    /* Include the "Download CV" button in the mobile menu */
+    .contact-btn {
+        display: none; /* Hide desktop "Download CV" button on mobile */
     }
 }

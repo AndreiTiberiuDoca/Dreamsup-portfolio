@@ -1,85 +1,90 @@
-/* General Container Styling */
-.container {
-    max-width: 1200px; /* Limit container width */
-    margin: 0 auto; /* Center the container */
-    padding: 0 1rem; /* Add some horizontal padding for smaller screens */
+/* General Reset */
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in element width */
+    margin: 0;
+    padding: 0;
 }
 
-/* Projects Section */
-#projects {
-    padding: 6rem 0;
-    background-color: var(--neutral-2);
-}
-
-#projects h2 {
-    text-align: center;
-    color: var(--geekblue-6);
-    margin-bottom: 3rem;
-}
-
-.projects-grid {
-    display: flex;
-    flex-direction: column; /* Arrange cards in a single column */
-    gap: 2rem; /* Consistent spacing between rows */
+/* My Projects Section */
+.my-projects {
+    padding: 4rem 2rem; /* Add vertical and horizontal padding */
+    background-color: var(--neutral-1); /* White background */
+    color: var(--neutral-10); /* Dark text */
+    overflow: hidden; /* Prevent content from overflowing */
 }
 
 .project-card {
+    max-width: 100%; /* Ensure card doesn't exceed viewport width */
+    margin: 0 auto; /* Center the card */
+    padding: 2rem; /* Add consistent padding inside the card */
+    background-color: var(--neutral-2); /* Light background for card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.project-card img {
+    max-width: 100%; /* Ensure images don't exceed card width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space below the image */
+}
+
+.project-card h3 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    margin-bottom: 1rem; /* Add spacing between title and description */
+}
+
+.project-card p {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 1rem; /* Add spacing between description and buttons */
+}
+
+.project-card .buttons {
     display: flex;
-    flex-direction: row; /* Change to row direction */
-    justify-content: space-between; /* Space out content horizontally */
-    background-color: var(--neutral-1);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    width: 100%; /* Span the full width of the container */
-    height: 240px; /* Fixed height */
-    padding: 2rem; /* Add padding around the card content */
+    gap: 1rem; /* Spacing between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+.project-card .buttons a {
+    text-decoration: none;
+    color: var(--geekblue-6); /* Vibrant Geekblue */
+    background-color: var(--neutral-1); /* White background */
+    padding: 0.5rem 1rem;
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
-.card-content {
-    display: flex;
-    align-items: center; /* Align items vertically */
+.project-card .buttons a:hover {
+    background-color: var(--geekblue-6); /* Vibrant Geekblue */
+    color: var(--neutral-1); /* White text */
 }
 
-.card-left {
-    flex: 1;
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    padding-right: 16px; /* Adjust padding as needed */
+/* Responsive Design */
+@media (max-width: 992px) {
+    .project-card {
+        padding: 1.5rem; /* Reduce padding on tablets */
+    }
+
+    .project-card h3 {
+        font-size: 1.25rem; /* Smaller font size for tablets */
+    }
+
+    .project-card p {
+        font-size: 0.9rem; /* Smaller font size for tablets */
+    }
 }
 
-.card-logo {
-    width: 200px; /* Adjust size of the logo */
-    height: 200px; /* Fixed height */
-    display: block;
-}
+@media (max-width: 768px) {
+    .project-card {
+        padding: 1rem; /* Further reduce padding on mobile */
+    }
 
-.card-right {
-    flex: 3;
-    padding-left: 16px; /* Adjust padding as needed */
-}
+    .project-card h3 {
+        font-size: 1.1rem; /* Even smaller font size for mobile */
+    }
 
-.card-right h3 {
-    font-size: 1.5rem;
-    color: var(--geekblue-6);
-    margin-bottom: 0.5rem; /* Reduce spacing between heading and text */
-}
-
-.card-right p {
-    font-size: 1rem;
-    color: var(--neutral-7);
-    line-height: 1.6;
-    margin-bottom: 1rem; /* Add some space before the button */
-}
-
-.card-right .secondary-btn {
-    margin-top: 1rem; /* Add some space above the button */
+    .project-card p {
+        font-size: 0.8rem; /* Even smaller font size for mobile */
+    }
 }
