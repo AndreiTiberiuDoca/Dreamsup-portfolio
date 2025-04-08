@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/main-section.css">
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/core-values.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/components.css"> <!-- Add this line -->
 
     <!-- Google Fonts -->
@@ -119,31 +120,115 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                <!-- Project Card 1 -->
-                <div class="project-card" data-modal="modal-1">
-                    <div class="card-content">
-                        <div class="card-left">
-                            <img src="assets/images/Default logo no text  2.png" alt="Project Logo" class="card-logo">
-                        </div>
-                        <div class="card-right">
-                            <h3>Project 1</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            </p>
-                            <button class="secondary-btn">See Project</button> <!-- Button included here -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat for other cards... -->
+<!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <!-- Category Filters -->
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="mobile">Mobile Applications</button>
+            <button class="filter-btn" data-category="website">Websites</button>
+            <button class="filter-btn" data-category="webapp">Web Apps</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="project-grid">
+            <!-- Mobile Application Cards -->
+            <div class="project-card mobile" data-modal-id="modal-1">
+                <img src="assets/images/Frame02.png" alt="Mobile App 1">
+            </div>
+            <div class="project-card mobile" data-modal-id="modal-2">
+                <img src="assets/images/Frame01.png" alt="Mobile App 2">
+            </div>
+
+            <!-- Website Cards -->
+            <div class="project-card website" data-modal-id="modal-3">
+                <img src="assets/images/website-1.jpg" alt="Website 1">
+            </div>
+            <div class="project-card website" data-modal-id="modal-4">
+                <img src="assets/images/website-2.jpg" alt="Website 2">
+            </div>
+
+            <!-- Web App Cards -->
+            <div class="project-card webapp" data-modal-id="modal-5">
+                <img src="assets/images/webapp-1.jpg" alt="Web App 1">
+            </div>
+            <div class="project-card webapp" data-modal-id="modal-6">
+                <img src="assets/images/webapp-2.jpg" alt="Web App 2">
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Modal Structure -->
+<div id="modal-overlay" class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <div id="modal-body"></div> <!-- Dynamic content will be injected here -->
+    </div>
+</div>
+
+<!-- Hidden Modal Content -->
+<div id="modal-1" class="hidden-modal">
+    <img src="assets/images/Frame 267.jpg" alt="Modal Image 1">
+</div>
+<div id="modal-2" class="hidden-modal">
+    <img src="assets/images/Frame 268.jpg" alt="Modal Image 2">
+</div>
+<div id="modal-3" class="hidden-modal">
+    <img src="assets/images/modal-website-1.jpg" alt="Modal Image 3">
+</div>
+<div id="modal-4" class="hidden-modal">
+    <img src="assets/images/modal-website-2.jpg" alt="Modal Image 4">
+</div>
+<div id="modal-5" class="hidden-modal">
+    <img src="assets/images/modal-webapp-1.jpg" alt="Modal Image 5">
+</div>
+<div id="modal-6" class="hidden-modal">
+    <img src="assets/images/modal-webapp-2.jpg" alt="Modal Image 6">
+</div>
+
+<!-- Footer Section -->
+<footer id="footer">
+    <div class="container">
+        <!-- Footer Content -->
+        <div class="footer-content">
+            <!-- Contact Information -->
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: example@example.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+
+            <!-- Useful Links -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-section">
+                <h4>Follow Me</h4>
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                        <img src="assets/icons/Linkedin-icon.svg" alt="LinkedIn Icon">
+                    </a>
+                    <a href="https://www.behance.net/yourprofile" target="_blank" aria-label="Behance">
+                        <img src="assets/icons/Behance-icon.svg" alt="Behance Icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2023 Your Name. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
     <!-- JavaScript Files -->
     <script src="js/header.js"></script>

@@ -1,90 +1,150 @@
-/* General Reset */
-* {
-    box-sizing: border-box; /* Ensure padding and borders are included in element width */
-    margin: 0;
-    padding: 0;
-}
-
-/* My Projects Section */
-.my-projects {
-    padding: 4rem 2rem; /* Add vertical and horizontal padding */
+/* Projects Section */
+#projects {
     background-color: var(--neutral-1); /* White background */
     color: var(--neutral-10); /* Dark text */
-    overflow: hidden; /* Prevent content from overflowing */
+    padding: 4rem 2rem; /* Reduced top padding (4rem instead of 6rem) */
+    text-align: center;
 }
 
+/* Project Grid */
+.project-grid {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 2rem; /* Space between cards (32px) */
+    align-items: center; /* Center cards horizontally */
+    padding-bottom: 3rem; /* Add bottom padding for extra space */
+}
+
+/* Project Card */
 .project-card {
-    max-width: 100%; /* Ensure card doesn't exceed viewport width */
-    margin: 0 auto; /* Center the card */
-    padding: 2rem; /* Add consistent padding inside the card */
-    background-color: var(--neutral-2); /* Light background for card */
-    border-radius: 8px; /* Rounded corners */
+    position: relative;
+    width: 100%; /* Full width by default */
+    max-width: 1120px; /* Reduced maximum width */
+    height: 416px; /* Reduced height */
+    overflow: hidden;
+    border-radius: 0.5rem; /* Rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    overflow: hidden; /* Hide overflowing content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
 .project-card img {
-    max-width: 100%; /* Ensure images don't exceed card width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any extra space below the image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire card */
+    display: block;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
 }
 
-.project-card h3 {
-    font-size: 1.5rem; /* Adjust font size for smaller screens */
-    margin-bottom: 1rem; /* Add spacing between title and description */
+.project-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+/* Hide modal content on the main page */
+.hidden-modal {
+    display: none; /* Completely hide the modal content */
 }
 
-.project-card p {
-    font-size: 1rem; /* Adjust font size for smaller screens */
-    line-height: 1.6; /* Improve readability */
-    margin-bottom: 1rem; /* Add spacing between description and buttons */
+/* Modal Styles */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+    z-index: 1000; /* Ensure the modal is on top */
 }
 
-.project-card .buttons {
-    display: flex;
-    gap: 1rem; /* Spacing between buttons */
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-}
-
-.project-card .buttons a {
-    text-decoration: none;
-    color: var(--geekblue-6); /* Vibrant Geekblue */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: var(--neutral-1); /* White background */
+    padding: 0; /* Remove padding to eliminate unwanted margins */
+    border-radius: 0.5rem; /* Rounded corners */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds modal height */
+    max-height: 90vh; /* Limit modal height to 90% of viewport height */
+    max-width: 1400px; /* Maximum width for larger screens */
+    width: 90%; /* Responsive width for smaller screens */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem; /* Close button size */
+    color: var(--neutral-10); /* Dark text */
+    cursor: pointer;
+    background: transparent; /* Ensure no background */
+    border: none; /* Remove any borders */
+}
+
+#modal-body {
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any padding */
+}
+
+#modal-body img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure image covers the entire modal */
+    display: block; /* Remove any inline spacing */
+    margin: 0; /* Remove any margins */
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px; /* Scrollbar width */
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5); /* Scrollbar thumb color */
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1); /* Scrollbar track color */
+}
+
+/* Category Filters */
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
     padding: 0.5rem 1rem;
-    border-radius: 4px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    font-size: 1rem;
+    font-family: inherit; /* Folosește același font ca restul site-ului */
+    font-weight: bold; /* Text bold */
+    color: var(--neutral-7); /* Neutral-7 text in default state */
+    background-color: var(--neutral-1); /* Neutral-1 background */
+    border: 1px solid var(--neutral-4); /* Neutral-4 stroke */
+    border-radius: 4px; /* Border radius set to 4px */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transitions */
 }
 
-.project-card .buttons a:hover {
-    background-color: var(--geekblue-6); /* Vibrant Geekblue */
-    color: var(--neutral-1); /* White text */
+.filter-btn.active {
+    background-color: var(--neutral-10); /* Neutral-10 fill for active state */
+    border-color: var(--neutral-10); /* Neutral-10 stroke for active state */
+    color: var(--neutral-1); /* White text for active state */
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .project-card {
-        padding: 1.5rem; /* Reduce padding on tablets */
-    }
-
-    .project-card h3 {
-        font-size: 1.25rem; /* Smaller font size for tablets */
-    }
-
-    .project-card p {
-        font-size: 0.9rem; /* Smaller font size for tablets */
-    }
+.filter-btn:hover:not(.active) {
+    background-color: var(--neutral-3); /* Light gray hover */
+    border-color: var(--neutral-5); /* Medium gray border */
+    color: var(--neutral-7); /* Neutral-7 text on hover */
 }
 
-@media (max-width: 768px) {
-    .project-card {
-        padding: 1rem; /* Further reduce padding on mobile */
-    }
+/* Hide Cards */
+.project-card {
+    display: none; /* Initially hidden */
+}
 
-    .project-card h3 {
-        font-size: 1.1rem; /* Even smaller font size for mobile */
-    }
-
-    .project-card p {
-        font-size: 0.8rem; /* Even smaller font size for mobile */
-    }
+.project-card.show {
+    display: block; /* Show cards when filtered */
 }

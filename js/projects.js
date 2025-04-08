@@ -1,35 +1,85 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Select elements
     const projectCards = document.querySelectorAll(".project-card");
-    const modals = document.querySelectorAll(".modal");
-    const closeButtons = document.querySelectorAll(".close-modal");
+    const modalOverlay = document.getElementById("modal-overlay");
+    const modalBody = document.getElementById("modal-body");
+    const closeModalButton = document.querySelector(".close-modal");
 
-    // Open modal when a project card is clicked
+    // Function to block scrolling on the page
+    const blockScroll = () => {
+        document.body.style.overflow = "hidden"; // Disable scrolling
+    };
+
+    // Function to unblock scrolling on the page
+    const unblockScroll = () => {
+        document.body.style.overflow = ""; // Enable scrolling
+    };
+
+    // Open modal when clicking on a project card
     projectCards.forEach((card) => {
         card.addEventListener("click", () => {
-            const modalId = card.getAttribute("data-modal"); // Get the modal ID from the card's data-modal attribute
-            const modal = document.getElementById(modalId); // Find the modal by its ID
-            if (modal) {
-                modal.style.display = "block"; // Show the modal
-            }
+            const modalId = card.getAttribute("data-modal-id"); // Get the modal ID from the clicked card
+            const modalContent = document.getElementById(modalId).innerHTML; // Get the modal content
+            modalBody.innerHTML = modalContent; // Inject the content into the modal
+            modalOverlay.style.display = "block"; // Show the modal
+            blockScroll(); // Block scrolling on the page
         });
     });
 
-    // Close modal when the close button is clicked
-    closeButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            const modal = button.closest(".modal"); // Find the closest modal
-            if (modal) {
-                modal.style.display = "none"; // Hide the modal
-            }
-        });
+    // Close modal when clicking the close button
+    closeModalButton.addEventListener("click", () => {
+        modalOverlay.style.display = "none"; // Hide the modal
+        modalBody.innerHTML = ""; // Clear the modal content
+        unblockScroll(); // Unblock scrolling on the page
     });
 
     // Close modal when clicking outside the modal content
-    modals.forEach((modal) => {
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) { // Check if the click is on the modal background
-                modal.style.display = "none"; // Hide the modal
-            }
+    modalOverlay.addEventListener("click", (event) => {
+        if (event.target === modalOverlay) {
+            modalOverlay.style.display = "none"; // Hide the modal
+            modalBody.innerHTML = ""; // Clear the modal content
+            unblockScroll(); // Unblock scrolling on the page
+        }
+    });
+
+    // Optional: Close modal when pressing the Escape key
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modalOverlay.style.display === "block") {
+            modalOverlay.style.display = "none"; // Hide the modal
+            modalBody.innerHTML = ""; // Clear the modal content
+            unblockScroll(); // Unblock scrolling on the page
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Select elements
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    // Add event listeners to filter buttons
+    filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            // Remove 'active' class from all buttons
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+
+            // Add 'active' class to the clicked button
+            button.classList.add("active");
+
+            // Get the selected category
+            const selectedCategory = button.getAttribute("data-category");
+
+            // Filter project cards based on the selected category
+            projectCards.forEach((card) => {
+                if (card.classList.contains(selectedCategory)) {
+                    card.classList.add("show");
+                } else {
+                    card.classList.remove("show");
+                }
+            });
         });
     });
+
+    // Initialize by showing cards from the first category (Mobile Applications)
+    filterButtons[0].click(); // Simulate click on the first button
 });
