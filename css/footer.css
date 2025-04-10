@@ -3,7 +3,6 @@
     background-color: var(--neutral-10); /* Dark background */
     color: var(--neutral-1); /* White text */
     padding: 2rem 1rem; /* Padding for spacing */
-    text-align: center; /* Center align content */
 }
 
 .footer-content {
@@ -12,6 +11,10 @@
     align-items: center; /* Center align items */
     gap: 2rem; /* Space between sections */
     margin-bottom: 2rem;
+    max-width: 75rem; /* Limit maximum width */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    padding: 0 1rem; /* Add padding for smaller screens */
 }
 
 .footer-section {
@@ -52,6 +55,7 @@
 
 .social-media {
     display: flex;
+    justify-content: flex-start; /* Align icons horizontally */
     gap: 1rem; /* Space between icons */
 }
 
@@ -69,4 +73,23 @@
     font-size: 0.9rem;
     color: var(--neutral-3); /* Light gray text */
     margin-top: 1rem;
+    text-align: center; /* Center align copyright text */
+    max-width: 75rem; /* Match the max-width of footer-content */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
+
+/* Desktop View */
+@media (min-width: 992px) {
+    .footer-content {
+        flex-direction: row; /* Align sections horizontally */
+        justify-content: center; /* Center columns in the middle of the screen */
+        align-items: flex-start; /* Align sections at the top */
+        gap: 4rem; /* Increase space between columns */
+    }
+
+    .footer-section {
+        text-align: left; /* Align text to the left */
+        max-width: none; /* Remove width restriction */
+    }
 }
