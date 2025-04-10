@@ -19,26 +19,34 @@
 .project-card {
     position: relative;
     width: 100%; /* Full width by default */
-    max-width: 1120px; /* Reduced maximum width */
-    height: 416px; /* Reduced height */
-    overflow: hidden;
-    border-radius: 0.5rem; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    max-width: 1120px; /* Maximum width */
+    height: 416px; /* Fixed height */
+    border: 1px solid var(--neutral-4); /* Neutral-4 border in default state */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure images don't overflow */
+    transition: all 0.3s ease; /* Smooth transitions */
+    background-color: var(--neutral-1); /* White background */
 }
 
 .project-card img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire card */
+    height: 100%; /* Cover the entire card */
+    object-fit: cover; /* Ensure the image covers the card without distortion */
     display: block;
-    transition: transform 0.3s ease; /* Smooth zoom effect */
+    transition: transform 0.3s ease; /* Smooth zoom effect on hover */
 }
 
+/* Hover State */
 .project-card:hover {
-    transform: scale(1.05); /* Slightly enlarge the card */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+    border-color: transparent; /* Remove border on hover */
+    transform: translateY(-5px); /* Slight upward movement */
 }
+
+.project-card:hover img {
+    transform: scale(1.05); /* Slight zoom effect on the image */
+}
+
 /* Hide modal content on the main page */
 .hidden-modal {
     display: none; /* Completely hide the modal content */
