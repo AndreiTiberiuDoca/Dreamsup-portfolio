@@ -112,7 +112,7 @@
 }
 
 /* Secondary Button Style for Download CV */
-.contact-me-btn {
+.download-cv-btn {
     display: inline-flex; /* Ensures consistent alignment */
     align-items: center; /* Vertically centers the text */
     justify-content: center; /* Horizontally centers the text */
@@ -130,7 +130,7 @@
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
-.contact-me-btn:hover {
+.download-cv-btn:hover {
     background-color: var(--geekblue-6); /* Full Geekblue background on hover */
     color: var(--neutral-1); /* White text on hover */
     border-color: var(--geekblue-6); /* Keep border color consistent */
