@@ -16,14 +16,13 @@
     gap: 2.5rem; /* 40px / 16 = 2.5rem */
     align-items: center; /* Vertically align items */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    padding: 0 1.5rem; /* Add horizontal padding of 24px / 16 = 1.5rem */
+    
 }
 
 /* Text Block Styling */
 .text-block {
     flex: 1; /* Take up available space */
     text-align: left; /* Align text to the left */
-    padding-left: 1.5rem; /* Add left padding of 24px / 16 = 1.5rem */
 }
 
 /* Tag Styling */
@@ -104,7 +103,6 @@
 .image {
     flex: 1; /* Take up available space */
     text-align: right; /* Align image to the right */
-    padding-right: 1.5rem; /* Add right padding of 24px / 16 = 1.5rem */
 }
 
 .image img {
@@ -144,4 +142,30 @@
         width: 100%; /* Ensure the image takes full width */
         height: auto; /* Maintain aspect ratio */
     }
+}
+
+/* Secondary Button Style for Download CV */
+.contact-me-btn {
+    display: inline-flex; /* Ensures consistent alignment */
+    align-items: center; /* Vertically centers the text */
+    justify-content: center; /* Horizontally centers the text */
+    height: 2.5rem; /* Fixed height of 32px */
+    padding: 0 1rem; /* Horizontal padding for spacing */
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem; /* Consistent font size */
+    font-weight: bold;
+    color: var(--geekblue-6); /* Geekblue text */
+    background-color: var(--neutral-1); /* White background */
+    border: 2px solid var(--geekblue-6); /* 2px border in Geekblue */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    text-decoration: none; /* Removes underline */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.contact-me-btn:hover {
+    background-color: var(--geekblue-6); /* Full Geekblue background on hover */
+    color: var(--neutral-1); /* White text on hover */
+    border-color: var(--geekblue-6); /* Keep border color consistent */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
 }

@@ -95,20 +95,23 @@ nav ul li a.active {
     border-bottom: 2px solid var(--geekblue-6); /* Underline for active links */
 }
 
-/* Contact Me Button */
+/* Primary Button Style for Contact Me */
 .contact-btn {
-    background-color: var(--geekblue-6); /* Vibrant Geekblue */
-    color: var(--neutral-1); /* White text */
-    border: none;
-    padding: 0.5rem 1rem;
+    display: inline-flex; /* Ensures consistent alignment */
+    align-items: center; /* Vertically centers the text */
+    justify-content: center; /* Horizontally centers the text */
+    height: 2.5rem; /* Fixed height of 32px */
+    padding: 0 1rem; /* Horizontal padding for spacing */
     font-family: 'Work Sans', sans-serif;
+    font-size: 1rem; /* Consistent font size */
     font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-    align-self: center; /* Vertically center the button */
+    color: var(--neutral-1); /* White text */
+    background-color: var(--geekblue-6); /* Vibrant Geekblue */
+    border: none; /* No border */
     border-radius: 4px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+    text-decoration: none; /* Removes underline */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
 .contact-btn:hover {

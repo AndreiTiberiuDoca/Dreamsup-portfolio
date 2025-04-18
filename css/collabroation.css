@@ -1,0 +1,35 @@
+/* Collaboration Section
+#collaboration {
+    background-color: var(--neutral-1); /* Use a light background color */
+    padding: 64px 20px; /* Add vertical spacing */
+    text-align: center; /* Center align all content */
+}
+
+#collaboration h2 {
+    font-size: 2rem; /* Large title */
+    margin-bottom: 16px; /* Space between title and text */
+    color: var( --geekblue-6); /* Use your primary brand color */
+}
+
+#collaboration p {
+    font-size: 1.1rem; /* Slightly larger text for readability */
+    line-height: 1.6; /* Improve readability with line spacing */
+    margin-bottom: 32px; /* Space before the button */
+    color: var(--neutral-8); /* Use a neutral text color */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px; /* Button padding */
+    font-size: 1rem; /* Button text size */
+    font-weight: 700; /* Bold text */
+    color: #fff; /* White text */
+    background-color: var( --geekblue-6); /* Primary brand color */
+    border-radius: 8px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color); /* Darker shade on hover */
+} */
