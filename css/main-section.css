@@ -111,6 +111,32 @@
     border-radius: 0.5rem; /* 8px / 16 = 0.5rem */
 }
 
+/* Secondary Button Style for Download CV */
+.contact-me-btn {
+    display: inline-flex; /* Ensures consistent alignment */
+    align-items: center; /* Vertically centers the text */
+    justify-content: center; /* Horizontally centers the text */
+    height: 2.5rem; /* Fixed height of 32px */
+    padding: 0 1rem; /* Horizontal padding for spacing */
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem; /* Consistent font size */
+    font-weight: bold;
+    color: var(--geekblue-6); /* Geekblue text */
+    background-color: var(--neutral-1); /* White background */
+    border: 2px solid var(--geekblue-6); /* 2px border in Geekblue */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    text-decoration: none; /* Removes underline */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.contact-me-btn:hover {
+    background-color: var(--geekblue-6); /* Full Geekblue background on hover */
+    color: var(--neutral-1); /* White text on hover */
+    border-color: var(--geekblue-6); /* Keep border color consistent */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     #main-cta .container {
@@ -144,28 +170,3 @@
     }
 }
 
-/* Secondary Button Style for Download CV */
-.contact-me-btn {
-    display: inline-flex; /* Ensures consistent alignment */
-    align-items: center; /* Vertically centers the text */
-    justify-content: center; /* Horizontally centers the text */
-    height: 2.5rem; /* Fixed height of 32px */
-    padding: 0 1rem; /* Horizontal padding for spacing */
-    font-family: 'Work Sans', sans-serif;
-    font-size: 1rem; /* Consistent font size */
-    font-weight: bold;
-    color: var(--geekblue-6); /* Geekblue text */
-    background-color: var(--neutral-1); /* White background */
-    border: 2px solid var(--geekblue-6); /* 2px border in Geekblue */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer;
-    text-decoration: none; /* Removes underline */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-}
-
-.contact-me-btn:hover {
-    background-color: var(--geekblue-6); /* Full Geekblue background on hover */
-    color: var(--neutral-1); /* White text on hover */
-    border-color: var(--geekblue-6); /* Keep border color consistent */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
-}
