@@ -12,7 +12,7 @@
     flex-direction: column; /* Stack cards vertically */
     gap: 2rem; /* Space between cards (32px) */
     align-items: center; /* Center cards horizontally */
-    padding-bottom: 3rem; /* Add bottom padding for extra space */
+
 }
 
 /* Project Card */
